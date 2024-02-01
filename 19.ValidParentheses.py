@@ -24,5 +24,7 @@ class Solution:
         # After iterating through the string, check if there are any unmatched opening brackets left in the stack
         return not stack
 """
-This code uses a stack to keep track of opening brackets encountered in the string. When a closing bracket is encountered, it checks whether the top of the stack matches the expected opening bracket. If there are any unmatched opening brackets left in the stack at the end, the string is not valid. Otherwise, it is valid according to the specified conditions.
+This code uses a stack to keep track of opening brackets encountered in the string. 
+When a closing bracket is encountered, it checks whether the top of the stack matches the expected opening bracket. 
+If there are any unmatched opening brackets left in the stack at the end, the string is not valid. Otherwise, it is valid according to the specified conditions.
 """
