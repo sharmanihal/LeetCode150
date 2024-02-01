@@ -1,0 +1,26 @@
+class Solution:
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        # Create a hashmap to store the index of each element in 'nums'
+        hashmap = {}
+
+        # Iterate through the elements of 'nums' along with their indices
+        for index, element in enumerate(nums):
+            # Check if the element is already in the hashmap
+            # and the difference in indices is less than or equal to 'k'
+            if element in hashmap and hashmap[element] != index and abs(index - hashmap[element]) <= k:
+                # If the conditions are met, return True
+                return True
+            
+            # Update the index of the current element in the hashmap
+            hashmap[element] = index
+
+        # If the loop completes, no such pair was found, so return False
+        return False
+"""
+- The function uses a hashmap (`hashmap`) to store the index of each element in the `nums` array.
+- It iterates through the elements of `nums` using `enumerate` to get both the element and its index.
+- In each iteration, it checks if the current element is already in the hashmap and if the difference in indices is less than or equal to `k`.
+- If these conditions are met, it means there are two distinct indices with the same element within the given range `k`, and the function returns True.
+- If no such pair is found after iterating through the entire array, the function returns False.
+"""
+
