@@ -1,6 +1,6 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        # Check if the lengths of 's' and 't' are not equal, if so, they can't be anagrams
+        #  Check if the lengths of 's' and 't' are not equal, if so, they can't be anagrams
         if len(s) != len(t):
             return False
         
