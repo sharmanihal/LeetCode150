@@ -77,3 +77,39 @@ class Solution:
 
 This approach efficiently removes duplicates in-place while ensuring that each unique element appears at most twice, maintaining the non-decreasing order of the array.
 """
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        # Initialize the index i to 2 (since we allow each unique element to appear at most twice)
+        i = 2
+        # Iterate through the array starting from the third element
+        for j in range(2, len(nums)):
+            # Check if the current element is different from the element two positions before it
+            if nums[i - 2] != nums[j]:
+                # If different, update the value at index i with the current element
+                nums[i] = nums[j]
+                # Increment i to move to the next position to fill with a potentially unique element
+                i += 1
+            # Increment j to move to the next element in the array
+            j += 1
+        # Return the index i, which represents the length of the modified array
+        return i
+"""
+Explanation:
+1. **Initialization of Index `i`**: 
+   - We initialize the index `i` to 2 because we allow each unique element to appear at most twice in the modified array.
+   
+2. **Iterating through the Array**:
+   - We iterate through the array using the index `j`, starting from the third element (index 2).
+   
+3. **Checking for Duplicates**:
+   - Within the loop, we check if the current element (`nums[j]`) is different from the element two positions before it (`nums[i - 2]`).
+   
+4. **Updating the Array**:
+   - If the current element is different, we update the value at index `i` with the current element (`nums[i] = nums[j]`).
+   - Then, we increment `i` to move to the next position where we can potentially store a unique element.
+   
+5. **Returning the Length of Modified Array**:
+   - Finally, we return the index `i`, which represents the length of the modified array after removing duplicates.
+
+"""
