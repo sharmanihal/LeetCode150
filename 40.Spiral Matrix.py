@@ -37,6 +37,4 @@ class Solution:
             first_column+=1
         
         # If there are extra elements in the result list, trim it to match the original matrix size
-        if len(res)>len(matrix[0])*len(matrix):
-            return res[0:len(matrix[0])*len(matrix)]
-        return res
+        return res[0:len(matrix[0])*len(matrix)]
